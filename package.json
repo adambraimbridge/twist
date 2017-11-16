@@ -1,0 +1,37 @@
+{
+  "name": "twist",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Generate Google Lighthouse reports for FT.com apps. Log results and notify Slack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test",
+    "precommit": "node_modules/.bin/secret-squirrel",
+    "prepush": "make test verify -j3",
+    "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Financial-Times/twist.git"
+  },
+  "author": "Adam Braimbridge <adam.braimbridge@ft.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Financial-Times/twist/issues"
+  },
+  "homepage": "https://github.com/Financial-Times/twist#readme",
+  "devDependencies": {
+    "@financial-times/n-gage": "^1.16.5",
+    "jest": "^21.2.1",
+    "lambda-tester": "^3.1.0",
+    "serverless": "^1.24.1",
+    "serverless-offline": "^3.16.0",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "denodeify": "^1.2.1"
+  },
+  "engines": {
+    "node": "6.10.3"
+  }
+}

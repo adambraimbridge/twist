@@ -1,0 +1,8 @@
+{
+  "name": "twist",
+  "runtime": "nodejs6.10.3",
+  "description": "Generate Google Lighthouse reports for FT.com apps. Log results and notify Slack.",
+  "role": "arn:aws:iam::00000000:role/FTApplicationRoleFor_twist",
+  "retainedVersions": 10,
+  "timeout": 300
+}

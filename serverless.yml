@@ -1,0 +1,36 @@
+service: ft-twist
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  deploymentBucket: ${env:AWS_DEPLOYMENT_BUCKET_PREFIX}
+  role: ${env:AWS_ROLE}
+  runtime: nodejs6.10
+
+functions:
+  gtg:
+    handler: functions/gtg.handler
+    events:
+      - http:
+          path: /__gtg
+          method: get
+  narcissus:
+    handler: functions/narcissus.handler
+    events:
+      - http:
+          path: /__narcissus
+          method: get
+  receiver:
+    handler: functions/receiver.handler
+    events:
+      - http:
+          path: /receiver
+          method: post
+    environment:
+
+package:
+  individually: true
