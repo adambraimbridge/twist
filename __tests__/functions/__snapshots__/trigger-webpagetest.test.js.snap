@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`functions/trigger-webpagetest given a URL it should trigger a Web Page Test for that URL 1`] = `
+Object {
+  "body": "Twist: Sucessfully triggered Webpagetools test: https://www.webpagetest.org/result/171116_QW_768975393ffe36d0fd0f76ac9f1ab902/",
+  "statusCode": 200,
+}
+`;
