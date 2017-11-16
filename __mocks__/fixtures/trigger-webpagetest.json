@@ -1,5 +1,5 @@
 {
-	"queryStringParameters": {
-		"url": "https://www.ft.com"
-	}
+    "queryStringParameters": {
+        "url": "https://www.ft.com"
+    }
 }
