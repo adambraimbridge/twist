@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Financial-Times/twist#readme",
   "devDependencies": {
-    "@financial-times/n-gage": "^1.16.5",
+    "@financial-times/n-gage": "^1.16.0",
     "jest": "^21.2.1",
     "lambda-tester": "^3.1.0",
     "serverless": "^1.24.1",
