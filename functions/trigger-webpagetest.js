@@ -17,22 +17,22 @@ const processRequest = request => {
 		'f=json'
 	].join('&');
 	return fetch(webpagetestUrl)
-		.then(response => response.json())
-		.then(json => json.data.userUrl);
-};
+		.then(response => response.json());
+	};
 
 module.exports.handler = (request, context, callback) => {
 	processRequest(request)
 		.then(response => {
 			callback(null, {
 				statusCode:200,
-				body:`Twist: Sucessfully triggered Webpagetools test: ${response}`,
+				headers: { 'Content-Type': 'application/json' },
+				body:JSON.stringify(response),
 			});
 		})
 		.catch(error => {
 			callback(null, {
 				statusCode:500,
-				body:`Twist: Failed to process request: ${error} ${error.stack}`,
+				body:`Twist: Failed to process request: ${request} | ${error} ${error.stack}`,
 			});
 		});
 };

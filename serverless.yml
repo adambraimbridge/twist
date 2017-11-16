@@ -24,13 +24,14 @@ functions:
       - http:
           path: /trigger-webpagetest
           method: get
+    environment:
+      WEBPAGETEST_API_KEY: ${env:WEBPAGETEST_API_KEY}
   receiveWebpagetest:
     handler: functions/receive-webpagetest.handler
     events:
       - http:
           path: /receive-webpagetest
           method: post
-    environment:
 
 package:
   individually: true
