@@ -18,17 +18,17 @@ functions:
       - http:
           path: /__gtg
           method: get
-  narcissus:
-    handler: functions/narcissus.handler
+  triggerWebpagetest:
+    handler: functions/trigger-webpagetest.handler
     events:
       - http:
-          path: /__narcissus
+          path: /trigger-webpagetest
           method: get
-  receiver:
-    handler: functions/receiver.handler
+  receiveWebpagetest:
+    handler: functions/receive-webpagetest.handler
     events:
       - http:
-          path: /receiver
+          path: /receive-webpagetest
           method: post
     environment:
 
