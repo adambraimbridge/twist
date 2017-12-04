@@ -18,6 +18,12 @@ functions:
       - http:
           path: /__gtg
           method: get
+  home:
+    handler: functions/home.handler
+    events:
+      - http:
+          path: /
+          method: get
   triggerWebpagetest:
     handler: functions/trigger-webpagetest.handler
     events:

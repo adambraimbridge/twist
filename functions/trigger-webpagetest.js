@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 const fetch = require('node-fetch');
-const pingbackUrl='https=//sqg4xkxx63.execute-api.eu-west-1.amazonaws.com/prod/receive-webpagetest';
-const notificationEmail = 'adam.braimbridge@ft.com';
+const pingbackUrl='https://twist.in.ft.com/receive-webpagetest';
 
 const processRequest = request => {
+	const notificationEmail = request.queryStringParameters.email || 'adam.braimbridge@ft.com';
 	const webpagetestUrl = [
 		'https://www.webpagetest.org/runtest.php?',
 		`url=${request.queryStringParameters.url}`,
