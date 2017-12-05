@@ -53,7 +53,8 @@ module.exports.handler = (request, context, callback) => {
 		.catch(error => {
 			callback(null, {
 				statusCode:500,
-				body:`Twist: Failed to process payload: ${error} ${error.stack}`,
+				headers: { 'Content-Type': 'application/json' },
+				body:`Twist: Failed to process payload: ${JSON.stringify(error)}`
 			});
 		});
 };
