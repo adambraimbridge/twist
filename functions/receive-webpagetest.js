@@ -17,6 +17,7 @@ const logResults = json => {
 };
 
 const sendToSlack = json => {
+	console.log(`Todo: Send slack message for ${json.data.id}`);
 	return Promise.resolve('Sent to slack');
 };
 
