@@ -14,7 +14,6 @@ module.exports.handler = (event, context, callback) => {
 	<p>Notification email: <input name="email" type="text" value="adam.braimbridge@ft.com"/></p>
 	<button type="submit">Engage</button>
 </form>
-<a href=""></a>
 </body></html>`
 	});
 };

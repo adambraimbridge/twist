@@ -1,0 +1,13 @@
+{
+	"statusCode": 200,
+	"statusText": "Test Complete",
+	"data": {
+		"id": "171116_5T_750e191ce9fc75e21351fc285e914b4a",
+		"summary": "http:\/\/www.webpagetest.org\/results.php?test=171116_5T_750e191ce9fc75e21351fc285e914b4a",
+		"testUrl": "https:\/\/www.ft.com",
+		"lighthouse": {
+			"generatedTime": "2017-11-16T15:38:15.041Z",
+			"score": 45.454545454545
+		}
+	}
+}

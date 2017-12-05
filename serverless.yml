@@ -37,7 +37,7 @@ functions:
     events:
       - http:
           path: /receive-webpagetest
-          method: post
+          method: get
 
 package:
   individually: true

@@ -13,9 +13,14 @@ const handler = require('../../functions/receive-webpagetest').handler;
 // You can edit after here.
 const payload = require('../../__mocks__/fixtures/receive-webpagetest.json');
 
-describe.skip('functions/receive-webpagetest', () => {
+describe('functions/receive-webpagetest', () => {
 	describe('given a notification from webpagetest', () => {
-		test('it should send a notification to Slack', () => {
+		test('it should fetch the lighthouse performance score', () => {
+			return lambdaTester(handler)
+				.event(payload)
+				.expectResult(response => expect(response).toMatchSnapshot());
+		});
+		test.skip('it should send a notification to Slack', () => {
 			return lambdaTester(handler)
 				.event(payload)
 				.expectResult(response => {
