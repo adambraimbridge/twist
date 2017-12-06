@@ -30,6 +30,7 @@ functions:
       - http:
           path: /trigger-webpagetest
           method: get
+      - schedule: rate(12 hours)
     environment:
       WEBPAGETEST_API_KEY: ${env:WEBPAGETEST_API_KEY}
   receiveWebpagetest:
