@@ -3,8 +3,8 @@ const fetch = require('node-fetch');
 const pingbackUrl='https://twist.in.ft.com/receive-webpagetest';
 
 const processRequest = request => {
-	const testUrl = request.queryStringParameters.url || 'https://www.ft.com';
-	const notificationEmail = request.queryStringParameters.email || 'adam.braimbridge@ft.com';
+	const testUrl = (request.queryStringParameters && request.queryStringParameters.url) || 'https://www.ft.com';
+	const notificationEmail = (request.queryStringParameters && request.queryStringParameters.email) || 'adam.braimbridge@ft.com';
 	const webpagetestUrl = [
 		'https://www.webpagetest.org/runtest.php?',
 		`url=${testUrl}`,
