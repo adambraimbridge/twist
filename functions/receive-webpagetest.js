@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const fetch = require('node-fetch');
+const slack = require('../lib/slack');
 
 const logResults = json => {
 	const webpagetestResultsLog = {
@@ -12,13 +13,11 @@ const logResults = json => {
 			'report': `http://www.webpagetest.org/lighthouse.php?test=${json.data.id}#performance`
 		}
 	};
+	if (json.error && json.error) {
+		webpagetestResultsLog.error = json.error;
+	}
 	console.log(JSON.stringify(webpagetestResultsLog));
-	return webpagetestResultsLog;
-};
-
-const sendToSlack = json => {
-	console.log(`Todo: Send slack message for ${json.data.id}`);
-	return Promise.resolve('Sent to slack');
+	return Promise.resolve(webpagetestResultsLog);
 };
 
 const processPayload = payload => {
@@ -26,15 +25,22 @@ const processPayload = payload => {
 	return fetch(`http://www.webpagetest.org/jsonResult.php?test=${testID}`)
 		.then(response => {
 			if (response.ok !== true) {
-				throw(`Bad response from http://www.webpagetest.org: ${response.ok}`);
+				throw new Error(`Bad response from http://www.webpagetest.org: ${response.ok}`);
 			}
 			return response;
 		})
 		.then(response => response.json())
-		.then(json => sendToSlack(json)
-			.then(() => logResults(json))
-		)
-		.catch(error => {throw error;});
+		.then(json => {
+			const messageToUser = slack.getSlackMessage(json);
+			return slack.send(messageToUser)
+				.then(response => {
+					return Object.assign(json, { response });
+				})
+				.catch(error => {
+					return Object.assign(json, { error });
+				});
+		})
+		.then(json => logResults(json));
 };
 
 module.exports.handler = (request, context, callback) => {
