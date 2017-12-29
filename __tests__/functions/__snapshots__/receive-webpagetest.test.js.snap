@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`functions/receive-webpagetest given a notification from webpagetest it should fetch the lighthouse performance score 1`] = `
+exports[`functions/receive-webpagetest given a notification from webpagetest it should fetch the lighthouse performance score and log results 1`] = `
 Object {
-  "body": "{\\"log\\":\\"Twist: Sucessfully processed Webpagetools Notification payload\\",\\"results\\":{\\"id\\":\\"171116_5T_750e191ce9fc75e21351fc285e914b4a\\",\\"summary\\":\\"http://www.webpagetest.org/results.php?test=171116_5T_750e191ce9fc75e21351fc285e914b4a\\",\\"testUrl\\":\\"https://www.ft.com\\",\\"lighthouse\\":{\\"generatedTime\\":\\"2017-11-16T15:38:15.041Z\\",\\"score\\":45.454545454545,\\"report\\":\\"http://www.webpagetest.org/lighthouse.php?test=171116_5T_750e191ce9fc75e21351fc285e914b4a#performance\\"}}}",
+  "body": "{\\"log\\":\\"Twist: Sucessfully processed the webpagetools notification payload\\",\\"results\\":{\\"id\\":\\"171116_5T_750e191ce9fc75e21351fc285e914b4a\\",\\"summary\\":\\"http://www.webpagetest.org/results.php?test=171116_5T_750e191ce9fc75e21351fc285e914b4a\\",\\"testUrl\\":\\"https://www.ft.com\\",\\"lighthouse\\":{\\"generatedTime\\":\\"2017-11-16T15:38:15.041Z\\",\\"score\\":45.454545454545,\\"report\\":\\"http://www.webpagetest.org/lighthouse.php?test=171116_5T_750e191ce9fc75e21351fc285e914b4a#performance\\"}}}",
   "headers": Object {
     "Content-Type": "application/json",
   },

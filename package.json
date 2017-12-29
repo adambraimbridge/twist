@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "denodeify": "^1.2.1",
+    "moment": "^2.20.1",
     "node-fetch": "^1.7.3"
   },
   "engines": {

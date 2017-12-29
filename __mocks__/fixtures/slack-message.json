@@ -1,1 +1,24 @@
-{"attachments": [{"color": "good", "text": "", "title": "Next steps:", "title_link": "GITHUB_COMMIT_URL"}], "channel": "CHANNEL", "text": "A new lighthouse report"}
+{
+	"attachments": [{
+		"color": "danger",
+		"mrkdwn_in": ["text"],
+		"pretext": "URL tested: https://www.ft.com/",
+		"text": "Progressive Web App: *45*"
+	}, {
+		"color": "danger",
+		"mrkdwn_in": ["text"],
+		"text": "Performance: *24*"
+	}, {
+		"color": "good",
+		"mrkdwn_in": ["text"],
+		"text": "Accessibility: *100*"
+	}, {
+		"color": "warning",
+		"mrkdwn_in": ["text"],
+		"text": "Best Practices: *81*"
+	}],
+	"channel": "#twist",
+	"icon_emoji": ":passenger_ship:",
+	"text": "*<https://www.webpagetest.org/lighthouse.php?run=1&test=171116_5T_750e191ce9fc75e21351fc285e914b4a|Google Lighthouse report: November 16th 2017, 3:38:15 pm>*",
+	"unfurl_links": false
+}

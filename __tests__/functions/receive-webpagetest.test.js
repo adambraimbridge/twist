@@ -10,32 +10,33 @@ const slack_getSlackMessage = jest.spyOn(slack, 'getSlackMessage');
 const slack_send = jest.spyOn(slack, 'send');
 
 // You can edit after here.
-const payload = require('../../__mocks__/fixtures/receive-webpagetest.json');
-const message = require('../../__mocks__/fixtures/slack-message.json');
+const receiveWebpagetestPayload = require('../../__mocks__/fixtures/receive-webpagetest.json');
+const webpagetestJsonResult = require('../../__mocks__/fixtures/json-result.json');
+const slackMessage = require('../../__mocks__/fixtures/slack-message.json');
 
 describe('functions/receive-webpagetest', () => {
 	describe('given a notification from webpagetest', () => {
-		test.skip('it should fetch the lighthouse performance score and log results', () => {
+		test('it should generate an appropriate slack message', () => {
 			return lambdaTester(handler)
-				.event(payload)
-				.expectResult(response => {
-					expect(response).toMatchSnapshot();
-				});
-		});
-
-		test.skip('it should generate appropriate slack message', () => {
-			return lambdaTester(handler)
-				.event(payload)
+				.event(receiveWebpagetestPayload)
 				.expectResult(() => {
-					expect(slack_getSlackMessage).toHaveBeenCalledWith(payload);
+					expect(slack_getSlackMessage).toHaveBeenCalledWith(webpagetestJsonResult.data);
 				});
 		});
 
 		test('it should send the message to slack', () => {
 			return lambdaTester(handler)
-				.event(payload)
+				.event(receiveWebpagetestPayload)
 				.expectResult(() => {
-					expect(slack_send).toHaveBeenCalledWith(message);
+					expect(slack_send).toHaveBeenCalledWith(slackMessage);
+				});
+		});
+
+		test('it should fetch the lighthouse performance score and log results', () => {
+			return lambdaTester(handler)
+				.event(receiveWebpagetestPayload)
+				.expectResult(response => {
+					expect(response).toMatchSnapshot();
 				});
 		});
 	});

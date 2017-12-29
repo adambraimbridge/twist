@@ -1,5 +1,5 @@
 /* global jest */
-const jsonResultResponse = require('./fixtures/jsonResult');
+const jsonResultResponse = require('./fixtures/json-result');
 const runtestResponse = require('./fixtures/runtest');
 
 const fixtures = [

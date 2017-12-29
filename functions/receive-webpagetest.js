@@ -16,6 +16,8 @@ const logResults = json => {
 	if (json.error && json.error) {
 		webpagetestResultsLog.error = json.error;
 	}
+
+	// Do not remove this console log. It is copied to splunk automagically.
 	console.log(JSON.stringify(webpagetestResultsLog));
 	return Promise.resolve(webpagetestResultsLog);
 };
@@ -25,13 +27,13 @@ const processPayload = payload => {
 	return fetch(`http://www.webpagetest.org/jsonResult.php?test=${testID}`)
 		.then(response => {
 			if (response.ok !== true) {
-				throw new Error(`Bad response from http://www.webpagetest.org: ${response.ok}`);
+				throw new Error(`Bad response from http://www.webpagetest.org: ${response}`);
 			}
 			return response;
 		})
 		.then(response => response.json())
 		.then(json => {
-			const messageToUser = slack.getSlackMessage(json);
+			const messageToUser = slack.getSlackMessage(json.data);
 			return slack.send(messageToUser)
 				.then(response => {
 					return Object.assign(json, { response });
@@ -47,7 +49,7 @@ module.exports.handler = (request, context, callback) => {
 	processPayload(request)
 		.then(response => {
 			const output = {
-				'log':'Twist: Sucessfully processed Webpagetools Notification payload',
+				'log':'Twist: Sucessfully processed the webpagetools notification payload',
 				'results': response
 			};
 			callback(null, {
@@ -60,7 +62,7 @@ module.exports.handler = (request, context, callback) => {
 			callback(null, {
 				statusCode:500,
 				headers: { 'Content-Type': 'application/json' },
-				body:`Twist: Failed to process payload: ${JSON.stringify(error)}`
+				body:`Twist: Failed to process payload: ${error} ${error.stack}`
 			});
 		});
 };
