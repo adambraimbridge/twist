@@ -1,27 +1,35 @@
 {
-	"icon_emoji": ":passenger_ship:",
-	"channel": "#twist",
+    "icon_emoji": ":passenger_ship:",
+    "channel": "#twist",
     "text": "*<REPORT_URL|Google Lighthouse report: REPORT_DATE>*",
-	"unfurl_links": false,
+    "unfurl_links": false,
     "attachments": [
         {
-		    "mrkdwn_in": ["text"],
-			"pretext":"URL tested: TEST_URL",
-			"text": "Progressive Web App: *SCORE_PROGRESSIVE_WEB_APP*",
+            "mrkdwn_in": [
+                "text"
+            ],
+            "pretext": "URL tested: TEST_URL",
+            "text": "Progressive Web App: *SCORE_PROGRESSIVE_WEB_APP*",
             "color": "COLOR_PROGRESSIVE_WEB_APP"
         },
         {
-		    "mrkdwn_in": ["text"],
+            "mrkdwn_in": [
+                "text"
+            ],
             "text": "Performance: *SCORE_PERFORMANCE*",
             "color": "COLOR_PERFORMANCE"
         },
         {
-		    "mrkdwn_in": ["text"],
+            "mrkdwn_in": [
+                "text"
+            ],
             "text": "Accessibility: *SCORE_ACCESSIBILITY*",
             "color": "COLOR_ACCESSIBILITY"
         },
         {
-		    "mrkdwn_in": ["text"],
+            "mrkdwn_in": [
+                "text"
+            ],
             "text": "Best Practices: *SCORE_BEST_PRACTICES*",
             "color": "COLOR_BEST_PRACTICES"
         }
