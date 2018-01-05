@@ -39,6 +39,9 @@ functions:
       - http:
           path: /receive-webpagetest
           method: get
+    environment:
+      SLACK_WEBHOOK: ${env:SLACK_WEBHOOK}
+
 
 package:
   individually: true

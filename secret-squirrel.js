@@ -13,7 +13,7 @@ module.exports = {
 			'8b412138de859f13e059f269e831399e', // __mocks__/fixtures/json-result.json:203|203|21924|21924
 			'baf5c6543a180364b5fe524584e91971', // __mocks__/fixtures/json-result.json:279|22000
 			'7mbdbgv5uPRDP3wINHwQSW0RchkOOq88', // __mocks__/fixtures/json-result.json:279|22000
-			'YvtzFvAbqBiax8KJT9FCjL93jZ9\\/RwNJbARJsbc', // __mocks__/fixtures/json-result.json:355|22076
+			'YvtzFvAbqBiax8KJT9FCjL93jZ9\\\\/RwNJbARJsbc', // __mocks__/fixtures/json-result.json:355|22076
 			'68281cfc648c1623c30b8a4d2899506c', // __mocks__/fixtures/json-result.json:355|22076
 			'woa8ZYu2C1M7WLV0Q5xgIL7NEh8yogHM', // __mocks__/fixtures/json-result.json:355|22076
 			'ef1a5a88e859df4c72e4f26a8b2da309', // __mocks__/fixtures/json-result.json:431|431|22152|22152
@@ -93,7 +93,7 @@ module.exports = {
 			'fc94fb0c3ed8a8f909dbc7630a0987ff', // __mocks__/fixtures/json-result.json:10514|10514|32235|32235
 			'1ce1a07763388485d61fea08119d1097', // __mocks__/fixtures/json-result.json:10587|10587|10665|10665|11035|11035|11263|11263|32308|32308|32386|32386|32756|32756|32984|32984
 			'c89085b8-03b2-464a-b16f-a5f214858a62', // __mocks__/fixtures/json-result.json:11561|33282
-			'5d32Venr7WvuEamEkgfsHE17a9EF\\/2e6FLM5xZQ', // __mocks__/fixtures/json-result.json:11635|33356
+			'5d32Venr7WvuEamEkgfsHE17a9EF\\\\/2e6FLM5xZQ', // __mocks__/fixtures/json-result.json:11635|33356
 			'2f4e74d63efb190d4e10927fc18ab3b1', // __mocks__/fixtures/json-result.json:11635|11635|33356|33356
 			'84e95f10bfc621e709b828b9e448e691', // __mocks__/fixtures/json-result.json:11710|11710|33431|33431
 			'8f4f1997-5e13-414c-9dcb-d7a7bcb9c28e', // __mocks__/fixtures/json-result.json:11786|33507
@@ -103,8 +103,11 @@ module.exports = {
 			'38820990-ac2d-4268-b0e2-044a6468cefe', // __mocks__/fixtures/json-result.json:12541|34262
 			'0d16497681a349a95fc61ba920a56b36', // __mocks__/fixtures/json-result.json:12616|12616|34337|34337
 			'c4e3e106fbcc28e9c5b2be2a78018886', // __mocks__/fixtures/json-result.json:12690|12690|34411|34411
-			'16\\/5T\\/750e191ce9fc75e21351fc285e914b4a', // __mocks__/fixtures/json-result.json:13206|13207|13208|13212|13213|13214|13215|34927|34928|34929|34933|34934|34935|34936
-			'750e191ce9fc75e21351fc285e914b4a' // __mocks__/fixtures/json-result.json:13206|13206|13207|13207|13208|13208|13212|13212|13213|13213|13214|13214|13215|13215|34927|34927|34928|34928|34929|34929|34933|34933|34934|34934|34935|34935|34936|34936
+			'16\\\\/5T\\\\/750e191ce9fc75e21351fc285e914b4a', // __mocks__/fixtures/json-result.json:13206|13207|13208|13212|13213|13214|13215|34927|34928|34929|34933|34934|34935|34936
+			'750e191ce9fc75e21351fc285e914b4a', // __mocks__/fixtures/json-result.json:13206|13206|13207|13207|13208|13208|13212|13212|13213|13213|13214|13214|13215|13215|34927|34927|34928|34928|34929|34929|34933|34933|34934|34934|34935|34935|34936|34936
+			'1bd2b5ec-9fbb-11e5-8613-08e211ea5317', // lib/test-urls.js:7|8
+			'dde0af68-4db2-11e6-88c5-db83e98a590a', // lib/test-urls.js:11
+			'52ecf0df-45ce-3fa3-85ee-e5c3a8e0c394' // lib/test-urls.js:18
 		]
 	}
 };

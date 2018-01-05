@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 
 // This block must go first
-global.console = {log: jest.fn()};
+global.console = { log: jest.fn() };
 const lambdaTester = require('lambda-tester');
 const handler = require('../../functions/receive-webpagetest').handler;
 const slack = require('../../lib/slack');
