@@ -11,20 +11,9 @@ const triggerWebpagetests = urls => {
 };
 
 const processRequest = request => {
-	let testUrls = [];
-	if (request.queryStringParameters && request.queryStringParameters.url) {
-		try {
-			testUrls.push(new URL(request.queryStringParameters.url));
-		} catch (error) { }
-	}
-
-	// If the requested URL was not a valid URL, then use the list of default test URLs
-	if (testUrls.length === 0) {
-		testUrls = defaultTestUrls;
-	}
-
+	const testUrls = (request.queryStringParameters && request.queryStringParameters.url) ? [request.queryStringParameters.url] : defaultTestUrls;
 	const notificationEmail = (request.queryStringParameters && request.queryStringParameters.email) || 'adam.braimbridge@ft.com';
-	testUrls = testUrls.map(testUrl => [
+	return triggerWebpagetests(testUrls.map(testUrl => [
 		'https://www.webpagetest.org/runtest.php?',
 		`url=${testUrl}`,
 		`pingback=${pingbackUrl}`,
@@ -35,9 +24,7 @@ const processRequest = request => {
 		'private=1',
 		'lighthouse=1',
 		'f=json'
-	].join('&'));
-
-	return triggerWebpagetests(testUrls);
+	].join('&')));
 };
 
 module.exports.handler = (request, context, callback) => {
