@@ -3,7 +3,18 @@ const fetch = require('node-fetch');
 const slack = require('../lib/slack');
 
 const logResults = json => {
-	const webpagetestResultsLog = {
+	const matchingKeys = Object.keys(json.data.median.firstView).filter(key => {
+		return ['userTime.', 'lighthouse.', 'chromeUserTiming.'].find(needle => {
+			return key.includes(needle);
+		});
+	});
+
+	const data = matchingKeys.reduce((accumulator, key) => {
+		accumulator[key] = json.data.median.firstView[key];
+		return accumulator;
+	}, {});
+
+	const webpagetestResultsLog = Object.assign({},{
 		'id': json.data.id,
 		'summary': json.data.summary,
 		'testUrl': json.data.testUrl,
@@ -11,8 +22,10 @@ const logResults = json => {
 			'generatedTime': json.data.lighthouse.generatedTime,
 			'score': json.data.lighthouse.score,
 			'report': `http://www.webpagetest.org/lighthouse.php?test=${json.data.id}#performance`
-		}
-	};
+		},
+		data
+	});
+
 	if (json.error && json.error) {
 		webpagetestResultsLog.error = json.error;
 	}
