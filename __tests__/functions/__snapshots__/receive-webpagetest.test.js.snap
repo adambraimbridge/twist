@@ -2,7 +2,7 @@
 
 exports[`functions/receive-webpagetest given a notification from webpagetest it should fetch the lighthouse performance score and log results 1`] = `
 Object {
-  "body": "{\\"log\\":\\"Twist: Sucessfully processed the webpagetools notification payload\\",\\"results\\":{\\"ok\\":true}}",
+  "body": "{\\"log\\":\\"Twist: Sucessfully processed the webpagetools notification payload\\"}",
   "headers": Object {
     "Content-Type": "application/json",
   },
