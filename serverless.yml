@@ -57,5 +57,7 @@ package:
   exclude:
     - ./**
   include:
+    - functions/**
+    - lib/**
     - node_modules/**
     - package.json
