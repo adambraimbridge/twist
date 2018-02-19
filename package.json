@@ -29,9 +29,13 @@
     "supertest": "^3.0.0"
   },
   "dependencies": {
+    "@financial-times/n-gage": "^1.19.7",
     "denodeify": "^1.2.1",
+    "lambda-tester": "^3.2.0",
     "moment": "^2.20.1",
-    "node-fetch": "^1.7.3"
+    "node-fetch": "^1.7.3",
+    "serverless": "^1.26.0",
+    "serverless-offline": "^3.18.0"
   },
   "engines": {
     "node": "6.10.3"
