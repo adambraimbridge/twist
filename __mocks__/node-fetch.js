@@ -4,6 +4,7 @@ const runtestResponse = require('./fixtures/runtest');
 
 const fixtures = [
 	{ method: 'POST', url: process.env.SLACK_WEBHOOK, data: { ok: true, text: () => 'ok' } },
+	{ method: 'POST', url: process.env.SPLUNK_HEC_URL, data: { ok: true, text: () => 'ok' } },
 	{ method: 'GET', url: 'https://www.webpagetest.org/runtest.php', data: { ok: true, json: () => runtestResponse } },
 	{ method: 'GET', url: 'http://www.webpagetest.org/jsonResult.php', data: { ok: true, json: () => jsonResultResponse } },
 ];

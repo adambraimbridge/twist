@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const fetch = require('node-fetch');
 const slack = require('../lib/slack');
+const logToSplunk = require('../lib/log-to-splunk');
 
 const logResults = json => {
 	const matchingKeys = Object.keys(json.data.median.firstView).filter(key => {
@@ -30,9 +31,10 @@ const logResults = json => {
 		webpagetestResultsLog.error = json.error;
 	}
 
-	// Do not remove this console log. It is copied to splunk automagically.
-	console.log(JSON.stringify(webpagetestResultsLog));
-	return Promise.resolve(webpagetestResultsLog);
+	return logToSplunk(webpagetestResultsLog)
+		.catch(error => {
+			console.error(error);
+		});
 };
 
 const processPayload = payload => {

@@ -10,6 +10,13 @@ provider:
   deploymentBucket: ${env:AWS_DEPLOYMENT_BUCKET_PREFIX}
   role: ${env:AWS_ROLE}
   runtime: nodejs6.10
+  memorySize: 128
+  timeout: 120
+  versionFunctions: false
+  stackTags: # Note these don't get applied to existing lambda functions, only new ones
+    environment: p
+    systemCode: twist
+    teamDL: next.team@ft.com
 
 functions:
   gtg:
@@ -41,7 +48,14 @@ functions:
           method: get
     environment:
       SLACK_WEBHOOK: ${env:SLACK_WEBHOOK}
-
+      SPLUNK_HEC_TOKEN: ${env:SPLUNK_HEC_TOKEN}
+      SPLUNK_HEC_URL: ${env:SPLUNK_HEC_URL}
+      SPLUNK_LOG_LEVEL: ${env:SPLUNK_LOG_LEVEL}
 
 package:
   individually: true
+  exclude:
+    - ./**
+  include:
+    - node_modules/**
+    - package.json
