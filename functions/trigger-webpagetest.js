@@ -20,7 +20,6 @@ const processRequest = request => {
 		`k=${process.env.WEBPAGETEST_API_KEY}`,
 		`notify=${notificationEmail}`,
 		'location=Dulles_Nexus7',
-		'fvonly=1',
 		'private=1',
 		'lighthouse=1',
 		'f=json'
