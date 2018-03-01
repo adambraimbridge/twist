@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const fetch = require('node-fetch');
 const slack = require('../lib/slack');
-const logToSplunk = require('../lib/log-to-splunk');
+const logger = require('@financial-times/n-serverless-logger').default;
 
 const logResults = json => {
 	const matchingKeys = Object.keys(json.data.median.firstView).filter(key => {
@@ -15,29 +15,30 @@ const logResults = json => {
 		return accumulator;
 	}, {});
 
-	const webpagetestResultsLog = Object.assign({},{
-		'id': json.data.id,
-		'summary': json.data.summary,
-		'testUrl': json.data.testUrl,
-		'lighthouse': {
-			'generatedTime': json.data.lighthouse.generatedTime,
-			'score': json.data.lighthouse.score,
-			'report': `http://www.webpagetest.org/lighthouse.php?test=${json.data.id}#performance`
-		},
-		data
-	});
+	const webpagetestResultsLog = Object.assign(
+		data,
+		{
+			'id': json.data.id,
+			'summary': json.data.summary,
+			'testUrl': json.data.testUrl,
+			'lighthouse': {
+				'generatedTime': json.data.lighthouse.generatedTime,
+				'score': json.data.lighthouse.score,
+				'report': `http://www.webpagetest.org/lighthouse.php?test=${json.data.id}#performance`
+			}
+		}
+	);
 
 	if (json.error && json.error) {
 		webpagetestResultsLog.error = json.error;
 	}
 
-	return logToSplunk(webpagetestResultsLog)
-		.then(response => {
-			console.log(response);
-		})
-		.catch(error => {
-			console.error(error);
-		});
+	logger.info({
+		event: 'WEB_PAGE_TEST_RESULTS',
+		webpagetestResultsLog
+	});
+
+	return logger.flush();
 };
 
 const processPayload = payload => {

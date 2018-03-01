@@ -30,10 +30,10 @@
   },
   "dependencies": {
     "@financial-times/n-gage": "^1.19.7",
+    "@financial-times/n-serverless-logger": "^0.1.4",
     "denodeify": "^1.2.1",
     "lambda-tester": "^3.2.0",
     "moment": "^2.20.1",
-    "node-fetch": "^1.7.3",
     "serverless": "^1.26.0",
     "serverless-offline": "^3.18.0"
   },
