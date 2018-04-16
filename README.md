@@ -8,4 +8,4 @@ This app features [Google Lighthouse](https://developers.google.com/web/tools/li
 
 ### Support
 
-If you have AWS problems, ask [#cloud-enablement](https://financialtimes.slack.com/messages/C0BLHAR17) otherwise ask [#ft-next-platform](https://financialtimes.slack.com/messages/C08PF33EC)
+If you have AWS problems, ask [#cloud-enablement](https://financialtimes.slack.com/messages/C0BLHAR17) otherwise ask [#etg](https://financialtimes.slack.com/messages/C08PF33EC)
