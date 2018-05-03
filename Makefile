@@ -20,11 +20,11 @@ run:
 	@$(DONE)
 
 provision:
-	serverless deploy --region eu-west-1 --stage ci${CIRCLE_BUILD_NUM}
+	serverless deploy --region eu-west-2 --stage ci${CIRCLE_BUILD_NUM}
 	@$(DONE)
 
 tidy:
-	serverless remove --region eu-west-1 --stage ci${CIRCLE_BUILD_NUM}
+	serverless remove --region eu-west-2 --stage ci${CIRCLE_BUILD_NUM}
 	@$(DONE)
 
 deploy:
