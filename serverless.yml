@@ -5,9 +5,16 @@ frameworkVersion: ">=1.1.0 <2.0.0"
 plugins:
   - serverless-offline
 
+custom:
+  eu-west-1:
+    deploymentBucket: ${env:AWS_DEPLOYMENT_BUCKET_PREFIX}
+  eu-west-2:
+    deploymentBucket: ${env:AWS_DEPLOYMENT_BUCKET_PREFIX}.ci
+
 provider:
   name: aws
-  deploymentBucket: ${env:AWS_DEPLOYMENT_BUCKET_PREFIX}
+  deploymentBucket: ${self:custom.${self:provider.region}.deploymentBucket}
+  region: ${opt:region}
   role: ${env:AWS_ROLE}
   runtime: nodejs6.10
   memorySize: 128
