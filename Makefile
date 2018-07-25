@@ -20,7 +20,7 @@ run:
 	@$(DONE)
 
 provision:
-	serverless deploy --region eu-west-2 --stage ci${CIRCLE_BUILD_NUM}
+	serverless deploy --aws-s3-accelerate --region eu-west-2 --stage ci${CIRCLE_BUILD_NUM}
 	@$(DONE)
 
 tidy:
@@ -28,7 +28,7 @@ tidy:
 	@$(DONE)
 
 deploy:
-	serverless deploy --region eu-west-1 --stage prod
+	serverless deploy --aws-s3-accelerate --region eu-west-1 --stage prod
 	@$(DONE)
 
 remove:
