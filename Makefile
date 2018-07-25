@@ -4,7 +4,7 @@ node_modules/@financial-times/n-gage/index.mk:
 
 -include node_modules/@financial-times/n-gage/index.mk
 
-@export IGNORE_A11Y = true
+export IGNORE_A11Y = true
 IS_USER_FACING := ""
 
 TEST_APP := "ft-twist-pr-${CIRCLE_BUILD_NUM}"

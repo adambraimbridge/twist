@@ -1,8 +1,0 @@
-machine:
-  node:
-    version: 6.10.3
-deployment:
-  production:
-    branch: master
-    commands:
-      - make deploy-by-day
