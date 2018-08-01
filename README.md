@@ -1,6 +1,8 @@
 # 🚨 Twist
 
-Generate Google Lighthouse reports for FT.com apps. Log results and notify Slack.
+Generate Google Lighthouse reports for FT.com apps. Log results to Slack in [#twist](https://financialtimes.slack.com/messages/C8K8ZAFUY).
+
+![image](https://user-images.githubusercontent.com/51677/43522199-84af3fe0-9590-11e8-9a1f-f992b02c642c.png)
 
 ### Why "Twist"?
 
