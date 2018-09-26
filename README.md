@@ -1,3 +1,14 @@
+<br /><br /><br /><br />
+
+
+# THIS PROJECT HAS BEEN ARCHIVED. 
+### We use https://saucelabs.com/, which now has the same feature.
+
+![image](https://user-images.githubusercontent.com/224547/46071158-59672100-c177-11e8-805f-cf22a0318497.png)
+
+<br /><br /><br /><br />
+
+
 # 🚨 Twist
 
 Generate Google Lighthouse reports for FT.com apps. Log results to Slack in [#twist](https://financialtimes.slack.com/messages/C8K8ZAFUY).
